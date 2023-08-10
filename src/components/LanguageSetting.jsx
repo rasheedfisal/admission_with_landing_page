@@ -45,9 +45,10 @@ const LanguageSetting = () => {
         <span className="sr-only">User menu</span>
         <GlobeIcon />
       </button>
-      {open && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {open && (
           <motion.div
+            key={0}
             initial={{ opacity: 0, y: 20 }}
             animate={{
               opacity: 1,
@@ -95,8 +96,8 @@ const LanguageSetting = () => {
               </a>
             ))}
           </motion.div>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </div>
   );
 };

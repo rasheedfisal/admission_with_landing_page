@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import { HashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";
 const MobileNavLinks = ({ setToggle, href, link }) => {
   const { t } = useTranslation();
   return (
     <li className="list-none cursor-pointer mr-8">
-      <Link
+      <HashLink
         to={href}
-        spy={true}
         smooth={true}
         duration={500}
         offset={-50}
@@ -15,7 +15,7 @@ const MobileNavLinks = ({ setToggle, href, link }) => {
         onClick={(prev) => setToggle(!prev)}
       >
         {t(link)}
-      </Link>
+      </HashLink>
     </li>
   );
 };

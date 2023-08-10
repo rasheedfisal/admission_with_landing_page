@@ -1,29 +1,27 @@
 import React from "react";
 import hero from "../../assets/hero3.png";
-import { logos } from "../../Data";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const Home = () => {
   const { t } = useTranslation();
-  const container = {
-    hidden: {
-      opacity: 0,
-      scale: 0,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
+  // const container = {
+  //   hidden: {
+  //     opacity: 0,
+  //     scale: 0,
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     scale: 1,
+  //     transition: {
+  //       delayChildren: 0.3,
+  //       staggerChildren: 0.1,
+  //     },
+  //   },
+  // };
+  // const item = {
+  //   hidden: { y: 20, opacity: 0 },
+  //   visible: { y: 0, opacity: 1 },
+  // };
   return (
     <div className="section" id="home">
       <div className="md:flex items-center justify-center">

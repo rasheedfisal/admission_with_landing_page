@@ -1,65 +1,20 @@
 import React, { useState } from "react";
 import { default as useFormContext } from "../../hooks/useUpdateFormContext";
 import PhoneInput from "react-phone-number-input";
-
-import MapPicker from "react-google-map-picker";
 import { useTranslation } from "react-i18next";
-// import LocationPicker from "react-leaflet-location-picker";
-
-// const pointVals = [
-//   [50, 2],
-
-// ];
-// const pointMode = {
-//   banner: true,
-//   control: {
-//     values: pointVals,
-//     onClick: (point) =>
-//       console.log("I've just been clicked on the map!", point),
-//     onRemove: (point) =>
-//       console.log("I've just been clicked for removal :(", point),
-//   },
-// };
-// const circleMode = {
-//   banner: false,
-// };
+import LeafMap from "../LeafMap";
 
 const GardianInfo = () => {
   const { t } = useTranslation();
   const { data, handleChange, handleCustomElementChange } = useFormContext();
   const lat = data.g_location.split(",")[0];
   const lng = data.g_location.split(",")[1];
-  const DefaultLocation = { lat: +lat, lng: +lng };
-  const DefaultZoom = 10;
-  const [defaultLocation, setDefaultLocation] = useState(DefaultLocation);
+  const userLocation = [lat, lng];
 
-  const [location, setLocation] = useState(defaultLocation);
-  const [zoom, setZoom] = useState(DefaultZoom);
-
-  // useEffect(() => {
-  //   handleCustomElementChange(location.lat + "," + location.lng, "g_location");
-  // }, [location]);
-
-  function handleChangeLocation(lat, lng) {
-    setLocation({ lat: lat, lng: lng });
-  }
-
-  function handleChangeZoom(newZoom) {
-    setZoom(newZoom);
-  }
-
-  function handleResetLocation() {
-    setDefaultLocation({ ...DefaultLocation });
-    setZoom(DefaultZoom);
-  }
+  const [location, setLocation] = useState(userLocation);
 
   const content = (
     <div className="flex flex-col">
-      {/* <div className="flex items-center justify-start gap-5 flex-wrap">
-        
-       
-      </div> */}
-
       <label htmlFor="g_title">
         {t("title")} <span className="text-red-600">*</span>
       </label>
@@ -188,39 +143,21 @@ const GardianInfo = () => {
         onChange={handleChange}
       />
 
-      <label htmlFor="g_location" className="hidden">
-        Location <span className="text-red-600">*</span>
+      <label htmlFor="g_location">
+        {t("location")} <span className="text-red-600">*</span>
       </label>
-      <input
-        type="text"
-        className="form-textbox hidden"
-        id="g_location"
-        name="g_location"
-        disabled
-        value={data.g_location}
-      />
-
-      <button
-        type="button"
-        className="bg-transparent hidden mt-3 mb-3 hover:bg-Teal text-blue-dark font-semibold hover:text-white py-2 px-4 border border-blue hover:border-transparent rounded cursor-pointer"
-        onClick={handleResetLocation}
-      >
-        Reset Location
-      </button>
-      {/* <div className="mb-3" />
-      <div>
-        <MapPicker
-          defaultLocation={defaultLocation}
-          zoom={zoom}
-          mapTypeId="roadmap"
-          style={{ height: "700px" }}
-          onChangeLocation={(lat, lng) =>
-            handleCustomElementChange(lat + "," + lng, "g_location")
-          }
-          onChangeZoom={handleChangeZoom}
-          apiKey="AIzaSyD07E1VvpsN_0FvsmKAj4nK9GnLq-9jtj8"
+      <div className="flex gap-2">
+        <input
+          type="text"
+          className="form-textbox flex-1"
+          id="g_location"
+          name="g_location"
+          disabled
+          value={location}
+          onChange={handleChange}
         />
-      </div> */}
+        <LeafMap defaultLocation={userLocation} setLocation={setLocation} />
+      </div>
     </div>
   );
 

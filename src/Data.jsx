@@ -22,12 +22,12 @@ import logo6 from "./assets/logo6.png";
 export const navLinks = [
   {
     id: 1,
-    href: "home",
+    href: "/#home",
     link: "home",
   },
   {
     id: 2,
-    href: "about",
+    href: "/#about",
     link: "about",
   },
   // {
