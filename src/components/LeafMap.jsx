@@ -11,9 +11,10 @@ import {
   Marker,
   useMapEvents,
   useMap,
+  Popup,
 } from "react-leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
-import MarkerIcon from "../icons/MarkerIcon";
+import { MarkerIcon, SchoolMarkerIcon } from "../icons/MarkerIcon";
 import "leaflet/dist/leaflet.css";
 import "leaflet-geosearch/dist/geosearch.css";
 
@@ -22,6 +23,29 @@ import { Globe2Icon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const DefaultZoom = 8;
+
+const schoolsLocation = [
+  {
+    name: "Cairo School of Management",
+    address: "17B Obor Buildings, Salah Salem St",
+    latlong: [30.036069973693323, 31.297988891601566],
+  },
+  {
+    name: "Ahlan Arabic Centre",
+    address: "7 Gamal Al Din Abou Al Mahasen",
+    latlong: [30.001650967084316, 31.487503051757816],
+  },
+  {
+    name: "Sakkara Language School Maadi",
+    address: "X866+5C5",
+    latlong: [29.92225486337381, 30.93063354492188],
+  },
+  {
+    name: "Capital International Schools",
+    address: "Area 17 KH",
+    latlong: [30.02878884408324, 31.233100891113285],
+  },
+];
 
 const LeafMap = ({ defaultLocation, setLocation }) => {
   const [selectedPosition, setSelectedPosition] = useState(defaultLocation);
@@ -63,6 +87,21 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
     }, [props]);
 
     return null; // don't want anything to show up from this comp
+  };
+
+  const SchoolMarkers = () => {
+    return schoolsLocation.map((loc, key) => {
+      return (
+        <Marker
+          key={key}
+          position={loc.latlong}
+          // interactive={false}
+          icon={SchoolMarkerIcon}
+        >
+          <Popup>{`${loc.name}, ${loc.address}`}</Popup>
+        </Marker>
+      );
+    });
   };
 
   const Markers = () => {
@@ -120,6 +159,7 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
                 attribution="google maps"
               />
               <SearchBar provider={new OpenStreetMapProvider()} />
+              <SchoolMarkers />
               <Markers />
             </MapContainer>
           )}
