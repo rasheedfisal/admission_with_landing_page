@@ -61,7 +61,7 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
         setLocation([latitude, longitude]);
       });
     }
-  }, [open]);
+  }, [open, setLocation]);
 
   useEffect(() => {
     if (open && isNotZero(selectedPosition)) {
@@ -69,7 +69,7 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
     } else {
       setShowMap(false);
     }
-  }, [selectedPosition]);
+  }, [selectedPosition, open]);
 
   const SearchBar = (props) => {
     const map = useMap(); // access to leaflet map
@@ -84,7 +84,7 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
 
       map.addControl(searchControl); // this is how you add a control in vanilla leaflet
       return () => map.removeControl(searchControl);
-    }, [props]);
+    }, [props, map, provider]);
 
     return null; // don't want anything to show up from this comp
   };
@@ -105,12 +105,12 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
   };
 
   const Markers = () => {
-    const map = useMapEvents({
-      click(e) {
-        setSelectedPosition([e.latlng.lat, e.latlng.lng]);
-        setLocation([e.latlng.lat, e.latlng.lng]);
-      },
-    });
+    // const map = useMapEvents({
+    //   click(e) {
+    //     setSelectedPosition([e.latlng.lat, e.latlng.lng]);
+    //     setLocation([e.latlng.lat, e.latlng.lng]);
+    //   },
+    // });
 
     return isNotZero(selectedPosition) ? (
       <Marker

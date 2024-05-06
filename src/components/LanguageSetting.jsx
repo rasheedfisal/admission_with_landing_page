@@ -6,7 +6,7 @@ import GlobeIcon from "../icons/GlobeIcon";
 import i18next from "i18next";
 import { AnimatePresence, motion } from "framer-motion";
 
-const languages = [
+export const languages = [
   {
     code: "en",
     name: "English",

@@ -6,8 +6,9 @@ import { FormProvider } from "./context/FormContext";
 import { UpdateFormProvider } from "./context/FormUpdateContext";
 import "react-toastify/dist/ReactToastify.css";
 import AdmissionReport from "./components/Reports/AdmissionReport";
-
+// import { AnimatePresence } from "framer-motion";
 function App() {
+  // const { pathname } = useLocation();
   return (
     <Routes>
       <Route path="/" element={<Layout />} exact>

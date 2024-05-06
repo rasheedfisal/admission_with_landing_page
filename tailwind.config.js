@@ -74,10 +74,61 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "section-animation": {
+          "0%": {
+            width: 0,
+          },
+
+          "15%": {
+            width: "100%",
+          },
+
+          "85%": {
+            opacity: 1,
+          },
+
+          "90%": {
+            opacity: 0,
+            width: "100%",
+          },
+
+          to: {
+            opacity: 0,
+            width: 0,
+          },
+        },
+        "hero-circle": {
+          "0%": {
+            "-webkit-transform": "rotate(0deg)",
+            transform: "rotate(0deg)",
+          },
+          "50%": {
+            "-webkit-transform": "rotate(1turn)",
+            transform: "rotate(1turn)",
+          },
+
+          to: {
+            "-webkit-transform": "rotate(0turn)",
+            transform: "rotate(0turn)",
+          },
+        },
+        "hero-dot": {
+          "0%": {
+            "-webkit-transform": "translateY(-100px)",
+            transform: "translateY(-100px)",
+          },
+          to: {
+            "-webkit-transform": "translateY(0)",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "section-animation": "section-animation 3s infinite",
+        "hero-circle": "hero-circle 6s infinite",
+        "hero-dot": "hero-dot 5s infinite",
       },
     },
 

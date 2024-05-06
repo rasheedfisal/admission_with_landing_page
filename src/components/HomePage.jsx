@@ -1,17 +1,20 @@
 import React from "react";
 
-import { Home, About, Teacher, Contact, Courses } from "./index";
+import { About, Teacher, Contact, Courses } from "./index";
+import AnimatedPage from "./AnimatedPage";
+import Hero from "./Hero-s";
 
 const HomePage = () => {
   return (
-    <>
-      <Home />
+    <AnimatedPage>
+      <Hero />
+      {/* <Home /> */}
       <About />
-      {/* 
+
       <Courses />
       <Teacher />
-      <Contact /> */}
-    </>
+      <Contact />
+    </AnimatedPage>
   );
 };
 

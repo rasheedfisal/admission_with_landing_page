@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useRef } from "react";
 import { categories } from "../../../Data";
 import { courses } from "../../../Data";
 import Categories from "./Categories";
 import Course from "./Course";
 import { motion } from "framer-motion";
 
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../../../components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import useIsRTL from "../../../hooks/useIsRTL";
+
 const Courses = () => {
+  const isRtl = useIsRTL();
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const container = {
     hidden: {
       opacity: 0,
@@ -44,12 +56,33 @@ const Courses = () => {
         })}
       </motion.div>
       <div className="text-xl font-bold mt-32">Most Popular Courses</div>
-      <div className="mt-12 overflow-x-hidden w-full  relative">
-        <div className="flex gap-8 md:w-full sm:w-[170%] xs:w-[340%] w-[480%] animate-slide">
-          {courses.map((course) => {
-            return <Course key={course.id} {...course} />;
-          })}
-        </div>
+
+      <div className="mt-12 m-auto w-full flex flex-col justify-center items-center px-4 py-2">
+        <Carousel
+          plugins={[plugin.current]}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
+          opts={{
+            align: "start",
+            direction: isRtl ? "rtl" : "ltr",
+          }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {courses.map((course) => {
+              return (
+                <CarouselItem
+                  key={course.id}
+                  className="basis-full sm:basis-1/2 md:basis-1/4"
+                >
+                  <Course {...course} />
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </div>
   );

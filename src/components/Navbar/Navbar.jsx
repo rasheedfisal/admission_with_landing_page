@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import LanguageSetting from "../LanguageSetting";
+import hero from "../../assets/hero3.png";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(null);
@@ -35,7 +36,8 @@ const Navbar = () => {
               className="text-3xl sm:hidden cursor-pointer"
               onClick={() => setToggle(true)}
             />
-            <div className="text-xl text-Teal uppercase tracking-wide font-bold">
+            <div className="text-xl text-Teal uppercase tracking-wide font-bold flex items-center gap-3">
+              <img src={hero} alt={t("site_name")} className="w-8 h-8" />
               <Link to="/">{t("site_name")}</Link>
             </div>
           </div>

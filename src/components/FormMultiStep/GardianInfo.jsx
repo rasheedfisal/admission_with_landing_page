@@ -14,22 +14,24 @@ const GardianInfo = () => {
   const { data, handleChange, handleCustomElementChange } = useFormContext();
 
   const content = (
-    <div className="flex flex-col">
-      <label htmlFor="g_title">
-        {t("title")} <span className="text-red-600">*</span>
-      </label>
-      <select
-        id="g_title"
-        className="form-textbox"
-        name="g_title"
-        value={data.g_title}
-        onChange={handleChange}
-      >
-        <option value="">{t("select")}</option>
-        <option value="Mr">{t("mr")}</option>
-        <option value="Mrs">{t("mrs")}</option>
-        <option value="Ms">{t("ms")}</option>
-      </select>
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col w-full">
+        <label htmlFor="g_title">
+          {t("title")} <span className="text-red-600">*</span>
+        </label>
+        <select
+          id="g_title"
+          className="form-textbox"
+          name="g_title"
+          value={data.g_title}
+          onChange={handleChange}
+        >
+          <option value="">{t("select")}</option>
+          <option value="Mr">{t("mr")}</option>
+          <option value="Mrs">{t("mrs")}</option>
+          <option value="Ms">{t("ms")}</option>
+        </select>
+      </div>
 
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
@@ -91,19 +93,20 @@ const GardianInfo = () => {
           />
         </div>
       </div>
-
-      <label htmlFor="g_email">
-        {t("email")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="email"
-        className="form-textbox"
-        pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
-        id="g_email"
-        name="g_email"
-        value={data.g_email}
-        onChange={handleChange}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="g_email">
+          {t("email")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="email"
+          className="form-textbox"
+          pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+          id="g_email"
+          name="g_email"
+          value={data.g_email}
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
@@ -132,32 +135,39 @@ const GardianInfo = () => {
         </div>
       </div>
 
-      <label htmlFor="g_address">
-        {t("address")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        className="form-textbox"
-        id="g_address"
-        name="g_address"
-        value={data.g_address}
-        onChange={handleChange}
-      />
-
-      <label htmlFor="g_location">
-        {t("location")} <span className="text-red-600">*</span>
-      </label>
-      <div className="flex gap-2">
+      <div className="flex flex-col w-full">
+        <label htmlFor="g_address">
+          {t("address")} <span className="text-red-600">*</span>
+        </label>
         <input
           type="text"
-          className="form-textbox flex-1"
-          id="g_location"
-          name="g_location"
-          disabled
-          value={location}
+          className="form-textbox"
+          id="g_address"
+          name="g_address"
+          value={data.g_address}
           onChange={handleChange}
         />
-        <LeafMap defaultLocation={defaultLocation} setLocation={setLocation} />
+      </div>
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="g_location">
+          {t("location")} <span className="text-red-600">*</span>
+        </label>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            className="form-textbox flex-1"
+            id="g_location"
+            name="g_location"
+            disabled
+            value={location}
+            onChange={handleChange}
+          />
+          <LeafMap
+            defaultLocation={defaultLocation}
+            setLocation={setLocation}
+          />
+        </div>
       </div>
     </div>
   );

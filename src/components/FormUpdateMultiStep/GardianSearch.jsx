@@ -17,7 +17,9 @@ const GardianSearch = () => {
     isLoading,
     isFetching,
     data: admissions,
-  } = useQuery(["admissions"], () => getAdmissionByPhone(data.gphone_num), {
+  } = useQuery({
+    queryKey: ["admissions"],
+    queryFn: () => getAdmissionByPhone(data.gphone_num),
     enabled: enableQry,
     select: (data) => data,
     retry: 1,

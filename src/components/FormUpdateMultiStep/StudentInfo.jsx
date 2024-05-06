@@ -9,20 +9,18 @@ import { useTranslation } from "react-i18next";
 const StudentInfo = () => {
   const { t } = useTranslation();
   const { data, setData } = useFormContext();
-  const { isLoading, mutate: deleteStd } = useMutation(
-    (id) => deleteStdFn(id),
-    {
-      onSuccess: () => {},
-      onError: (error) => {
-        console.log(error);
-        if (error) {
-          toast.error(error, {
-            position: "top-right",
-          });
-        }
-      },
-    }
-  );
+  const { isLoading, mutate: deleteStd } = useMutation({
+    mutationFn: (id) => deleteStdFn(id),
+    onSuccess: () => {},
+    onError: (error) => {
+      console.log(error);
+      if (error) {
+        toast.error(error, {
+          position: "top-right",
+        });
+      }
+    },
+  });
   const handleDelete = (index, id) => {
     if (id !== "new") {
       deleteStd(id);
