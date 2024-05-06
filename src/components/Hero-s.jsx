@@ -51,10 +51,10 @@ const Hero = () => {
         alt=""
       />
       <div className="container">
-        <div className="mt-24">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-0">
-            <div className="relative z-10">
-              <h3 className="text-5xl font-bold space-y-5">
+        <div className="mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="relative z-10 order-2 md:order-1 mt-7 md:mt-0">
+              <h3 className="text-2xl md:text-5xl font-bold space-y-5">
                 <span className="block font-normal">{t("site_slogan4")}</span>
                 <span className="relative z-10">
                   {t("site_slogan5")}
@@ -71,16 +71,22 @@ const Hero = () => {
               </h3>
               <p className="pr-0 md:pr-5">{t("site_slogan7")}</p>
               <div className="flex gap-3 mt-10">
-                <NextLink href="/admission" size="lg" className="bg-blue-700">
+                <NextLink
+                  href="/admission"
+                  className="bg-blue-700 h-8 md:h-10 rounded-md px-3 md:px-8 text-xs md:text-base animate-bounce duration-1000"
+                >
                   {t("adm_btn")}
                 </NextLink>
-                <NextLink href="/old" size="lg">
+                <NextLink
+                  href="/old"
+                  className="h-8 md:h-10 rounded-md px-3 md:px-8 text-xs md:text-base animate-reverse-bounce duration-1000"
+                >
                   {t("adm_reenrollment")}
                 </NextLink>
               </div>
             </div>
 
-            <div className="hero__thumb z-10 flex relative">
+            <div className="hero__thumb z-10 flex relative order-1 md:order-2">
               <div className="hero__thumb-shape">
                 <img
                   className="absolute -z-10 bottom-[-25px] left-[-30px] hero-1-dot animate-hero-dot"
@@ -146,7 +152,7 @@ const Hero = () => {
                   </CarouselContent>
                   <CarouselDots className="flex justify-center relative -top-5" />
                 </Carousel>
-                <div className="hero__quote bg-white shadow px-4 py-2 rounded absolute bottom-[-50px] right-[15px] md:bottom-[-50px] md:right-[60px] lg:right-[-145px] animate-bounce  hero__quote-animation">
+                <div className="hero__quote bg-white shadow px-4 py-2 rounded absolute bottom-[-50px] right-[15px] md:bottom-[-50px] md:right-[60px] lg:right-[-145px] animate-wiggle  hero__quote-animation">
                   <span>{t("site_slogan8")}</span>
                   <h4>{t("site_slogan8")}</h4>
                 </div>
