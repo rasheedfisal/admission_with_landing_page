@@ -30,21 +30,36 @@ export const navLinks = [
     href: "/#about",
     link: "about",
   },
-  // {
-  //   id: 3,
-  //   href: "courses",
-  //   link: "Courses",
-  // },
-  // {
-  //   id: 4,
-  //   href: "teacher",
-  //   link: "Teacher",
-  // },
-  // {
-  //   id: 5,
-  //   href: "contact",
-  //   link: "Contact",
-  // },
+  {
+    id: 3,
+    href: "/#courses",
+    link: "curriculum",
+  },
+  {
+    id: 4,
+    href: "/#teacher",
+    link: "teacher",
+  },
+  {
+    id: 5,
+    href: "/#contact",
+    link: "contact",
+  },
+  {
+    id: 6,
+    href: "/#events",
+    link: "events",
+  },
+  {
+    id: 7,
+    href: "/#locations",
+    link: "locations",
+  },
+  {
+    id: 8,
+    href: "/#calendar",
+    link: "calendar",
+  },
 ];
 
 export const categories = [
