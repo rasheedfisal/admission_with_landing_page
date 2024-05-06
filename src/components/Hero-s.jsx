@@ -25,7 +25,7 @@ const Hero = () => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const { t } = useTranslation();
   return (
-    <section className="min-h-[850px] flex items-center relative">
+    <section className="min-h-[850px] flex items-center relative" id="home">
       <img
         className="absolute left-[5%] top-[25%] animate-hero-circle"
         width={56}

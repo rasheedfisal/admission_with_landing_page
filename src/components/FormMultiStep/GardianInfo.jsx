@@ -156,7 +156,7 @@ const GardianInfo = () => {
         <div className="flex gap-2">
           <input
             type="text"
-            className="form-textbox flex-1"
+            className="form-textbox"
             id="g_location"
             name="g_location"
             disabled
