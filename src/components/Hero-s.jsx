@@ -57,7 +57,7 @@ const Hero = () => {
               <h3 className="text-2xl md:text-5xl font-bold space-y-5">
                 <span className="block font-normal">{t("site_slogan4")}</span>
                 <span className="relative z-10">
-                  {t("site_slogan5")}
+                  {t("site_slogan5")}{" "}
                   <img
                     className="absolute bottom-[22px] left-[-8px] -z-10 animate-section-animation"
                     src={yellow_bg}
@@ -89,7 +89,9 @@ const Hero = () => {
             <div className="hero__thumb z-10 flex relative order-1 md:order-2">
               <div className="hero__thumb-shape">
                 <img
-                  className="absolute -z-10 bottom-[-25px] left-[-30px] hero-1-dot animate-hero-dot"
+                  className={`absolute -z-10 bottom-[-25px] ${
+                    isRtl ? "right-[-30px]" : "left-[-30px]"
+                  } hero-1-dot animate-hero-dot`}
                   src={hero_1_dot}
                   alt=""
                   width={70}
@@ -152,7 +154,13 @@ const Hero = () => {
                   </CarouselContent>
                   <CarouselDots className="flex justify-center relative -top-5" />
                 </Carousel>
-                <div className="hero__quote bg-white shadow px-4 py-2 rounded absolute bottom-[-50px] right-[15px] md:bottom-[-50px] md:right-[60px] lg:right-[-145px] animate-wiggle  hero__quote-animation">
+                <div
+                  className={`hero__quote bg-white shadow px-4 py-2 rounded absolute bottom-[-50px] md:bottom-[-50px] ${
+                    isRtl
+                      ? "left-[15px] md:left-[60px] lg:left-[-145px]"
+                      : "right-[15px] md:right-[60px] lg:right-[-145px]"
+                  } animate-wiggle  hero__quote-animation`}
+                >
                   <span>{t("site_slogan8")}</span>
                   <h4>{t("site_slogan8")}</h4>
                 </div>
