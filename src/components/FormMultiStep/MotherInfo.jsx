@@ -7,7 +7,7 @@ const MotherInfo = () => {
   const { data, handleChange, handleCustomElementChange } = useFormContext();
 
   const content = (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-5">
       {/* <label htmlFor="m_title">Title</label>
       <select
         id="m_title"
@@ -51,18 +51,20 @@ const MotherInfo = () => {
         />
       </div>
 
-      <label htmlFor="m_email">
-        {t("email")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="email"
-        className="form-textbox"
-        disabled={data.sameAsMother}
-        id="m_email"
-        name="m_email"
-        value={data.m_email}
-        onChange={handleChange}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="m_email">
+          {t("email")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="email"
+          className="form-textbox"
+          disabled={data.sameAsMother}
+          id="m_email"
+          name="m_email"
+          value={data.m_email}
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
@@ -94,18 +96,21 @@ const MotherInfo = () => {
           />
         </div>
       </div>
-      <label htmlFor="m_address">
-        {t("address")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        className="form-textbox"
-        disabled={data.sameAsMother}
-        id="m_address"
-        name="m_address"
-        value={data.m_address}
-        onChange={handleChange}
-      />
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="m_address">
+          {t("address")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          className="form-textbox"
+          disabled={data.sameAsMother}
+          id="m_address"
+          name="m_address"
+          value={data.m_address}
+          onChange={handleChange}
+        />
+      </div>
 
       {/* <label htmlFor="m_religion">Religion</label>
       <select

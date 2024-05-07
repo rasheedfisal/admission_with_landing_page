@@ -3,6 +3,7 @@ import useFormContext from "../../hooks/useFormContext";
 import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
 import LeafMap from "../LeafMap";
+import LeafletControl from "../leaflet-s";
 
 const defaultLocation = [30.033333, 31.233334];
 
@@ -153,21 +154,24 @@ const GardianInfo = () => {
         <label htmlFor="g_location">
           {t("location")} <span className="text-red-600">*</span>
         </label>
-        <div className="flex gap-2">
-          <input
-            type="text"
-            className="form-textbox"
-            id="g_location"
-            name="g_location"
-            disabled
-            value={location}
-            onChange={handleChange}
-          />
-          <LeafMap
+
+        <input
+          type="text"
+          className="form-textbox mb-3"
+          id="g_location"
+          name="g_location"
+          disabled
+          value={location}
+          onChange={handleChange}
+        />
+        <LeafletControl
+          defaultLocation={defaultLocation}
+          setLocation={setLocation}
+        />
+        {/* <LeafMap
             defaultLocation={defaultLocation}
             setLocation={setLocation}
-          />
-        </div>
+          /> */}
       </div>
     </div>
   );

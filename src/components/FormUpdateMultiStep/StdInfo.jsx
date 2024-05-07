@@ -186,123 +186,140 @@ const StdInfo = () => {
   };
 
   const content = (
-    <div className="flex flex-col">
-      <label htmlFor="std_firstName">
-        {t("1st_name")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        className="form-textbox"
-        id="std_firstName"
-        name="std_firstName"
-        value={name}
-        pattern="([A-Z])[\w+.]{1,}"
-        onChange={(e) => setName(e.target.value)}
-      />
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_firstName">
+          {t("1st_name")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          className="form-textbox"
+          id="std_firstName"
+          name="std_firstName"
+          value={name}
+          pattern="([A-Z])[\w+.]{1,}"
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="std_dateofbirth">
-        {t("date_of_birth")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="date"
-        className="form-textbox"
-        id="std_dateofbirth"
-        name="std_dateofbirth"
-        value={birthDate}
-        onChange={(e) => setBirthDate(e.target.value)}
-        onSelect={(e) => setBirthDate(e.target.value)}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_dateofbirth">
+          {t("date_of_birth")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="date"
+          className="form-textbox"
+          id="std_dateofbirth"
+          name="std_dateofbirth"
+          value={birthDate}
+          onChange={(e) => setBirthDate(e.target.value)}
+          onSelect={(e) => setBirthDate(e.target.value)}
+        />
+      </div>
+
       {/* <CustomDatePicker setStartDate={setBirthDate} startDate={birthDate} /> */}
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_class">
+          {t("class")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          className="form-textbox"
+          id="std_class"
+          name="std_class"
+          value={className}
+          disabled
+          onChange={(e) => setClassName(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="std_class">
-        {t("class")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        className="form-textbox"
-        id="std_class"
-        name="std_class"
-        value={className}
-        disabled
-        onChange={(e) => setClassName(e.target.value)}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_religion">
+          {t("religion")} <span className="text-red-600">*</span>
+        </label>
+        <select
+          id="std_religion"
+          className="form-textbox"
+          name="std_religion"
+          value={religion}
+          onChange={(e) => setReligion(e.target.value)}
+        >
+          <option value="">{t("select")}</option>
+          <option value="muslim">{t("muslim")}</option>
+          <option value="christian">{t("christian")}</option>
+          <option value="other">{t("other")}</option>
+        </select>
+      </div>
 
-      <label htmlFor="std_religion">
-        {t("religion")} <span className="text-red-600">*</span>
-      </label>
-      <select
-        id="std_religion"
-        className="form-textbox"
-        name="std_religion"
-        value={religion}
-        onChange={(e) => setReligion(e.target.value)}
-      >
-        <option value="">{t("select")}</option>
-        <option value="muslim">{t("muslim")}</option>
-        <option value="christian">{t("christian")}</option>
-        <option value="other">{t("other")}</option>
-      </select>
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_gender">
+          {t("gender")} <span className="text-red-600">*</span>
+        </label>
+        <select
+          id="std_gender"
+          className="form-textbox"
+          name="std_gender"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+        >
+          <option value="">{t("select")}</option>
+          <option value="male">{t("male")}</option>
+          <option value="female">{t("female")}</option>
+        </select>
+      </div>
 
-      <label htmlFor="std_gender">
-        {t("gender")} <span className="text-red-600">*</span>
-      </label>
-      <select
-        id="std_gender"
-        className="form-textbox"
-        name="std_gender"
-        value={gender}
-        onChange={(e) => setGender(e.target.value)}
-      >
-        <option value="">{t("select")}</option>
-        <option value="male">{t("male")}</option>
-        <option value="female">{t("female")}</option>
-      </select>
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_lastAttendedSchool">
+          {t("last_attended_school")}{" "}
+          {className !== "Toddlers" && <span className="text-red-600">*</span>}
+        </label>
+        <input
+          type="text"
+          disabled={className === "Toddlers"}
+          className="form-textbox disabled:opacity-25"
+          id="std_lastAttendedSchool"
+          name="std_lastAttendedSchool"
+          value={lastAttendedSchool}
+          required={true}
+          pattern="([A-Z])[\w+.]{1,}"
+          onChange={(e) => setLastAttendedSchool(e.target.value)}
+        />
+      </div>
 
-      <label htmlFor="std_lastAttendedSchool">
-        {t("last_attended_school")}{" "}
-        {className !== "Toddlers" && <span className="text-red-600">*</span>}
-      </label>
-      <input
-        type="text"
-        disabled={className === "Toddlers"}
-        className="form-textbox disabled:opacity-25"
-        id="std_lastAttendedSchool"
-        name="std_lastAttendedSchool"
-        value={lastAttendedSchool}
-        required={true}
-        pattern="([A-Z])[\w+.]{1,}"
-        onChange={(e) => setLastAttendedSchool(e.target.value)}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_lastAttendedSchoolPhone">
+          {t("last_attended_school_phone")}{" "}
+          {className !== "Toddlers" && <span className="text-red-600">*</span>}
+        </label>
+        <PhoneInput
+          disabled={className === "Toddlers"}
+          defaultCountry="SD"
+          className="form-textbox disabled:opacity-25"
+          id="std_lastAttendedSchoolPhone"
+          name="std_lastAttendedSchoolPhone"
+          value={lastAttendedSchoolPhone}
+          required={true}
+          onChange={(e) => setLastAttendedSchoolPhone(e)}
+        />
+      </div>
 
-      <label htmlFor="std_lastAttendedSchoolPhone">
-        {t("last_attended_school_phone")}{" "}
-        {className !== "Toddlers" && <span className="text-red-600">*</span>}
-      </label>
-      <PhoneInput
-        disabled={className === "Toddlers"}
-        defaultCountry="SD"
-        className="form-textbox disabled:opacity-25"
-        id="std_lastAttendedSchoolPhone"
-        name="std_lastAttendedSchoolPhone"
-        value={lastAttendedSchoolPhone}
-        required={true}
-        onChange={(e) => setLastAttendedSchoolPhone(e)}
-      />
-      <label htmlFor="std_lastAttendedSchoolEmail">
-        {t("last_attended_school_email")}{" "}
-        {className !== "Toddlers" && <span className="text-red-600">*</span>}
-      </label>
-      <input
-        type="email"
-        disabled={className === "Toddlers"}
-        className="form-textbox disabled:opacity-25"
-        id="std_lastAttendedSchoolEmail"
-        name="std_lastAttendedSchoolEmail"
-        value={lastAttendedSchoolEmail}
-        required={true}
-        pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
-        onChange={(e) => setLastAttendedSchoolEmail(e.target.value)}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="std_lastAttendedSchoolEmail">
+          {t("last_attended_school_email")}{" "}
+          {className !== "Toddlers" && <span className="text-red-600">*</span>}
+        </label>
+        <input
+          type="email"
+          disabled={className === "Toddlers"}
+          className="form-textbox disabled:opacity-25"
+          id="std_lastAttendedSchoolEmail"
+          name="std_lastAttendedSchoolEmail"
+          value={lastAttendedSchoolEmail}
+          required={true}
+          pattern="/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/"
+          onChange={(e) => setLastAttendedSchoolEmail(e.target.value)}
+        />
+      </div>
 
       <label className="mt-5">{t("uploads")}</label>
       <hr />

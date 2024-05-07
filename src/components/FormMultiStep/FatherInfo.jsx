@@ -7,7 +7,7 @@ const FatherInfo = () => {
   const { data, handleChange, handleCustomElementChange } = useFormContext();
 
   const content = (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-5">
       <div className="form-check">
         <input
           className="form-check-input h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
@@ -54,6 +54,7 @@ const FatherInfo = () => {
           />
         </div>
       </div>
+
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
           <label htmlFor="f_middleName">
@@ -87,18 +88,20 @@ const FatherInfo = () => {
         </div>
       </div>
 
-      <label htmlFor="f_email">
-        {t("email")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="email"
-        className="form-textbox"
-        disabled={data.sameAsFather}
-        id="f_email"
-        name="f_email"
-        value={data.f_email}
-        onChange={handleChange}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="f_email">
+          {t("email")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="email"
+          className="form-textbox"
+          disabled={data.sameAsFather}
+          id="f_email"
+          name="f_email"
+          value={data.f_email}
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
@@ -131,18 +134,20 @@ const FatherInfo = () => {
         </div>
       </div>
 
-      <label htmlFor="f_address">
-        {t("address")} <span className="text-red-600">*</span>
-      </label>
-      <input
-        type="text"
-        className="form-textbox"
-        disabled={data.sameAsFather}
-        id="f_address"
-        name="f_address"
-        value={data.f_address}
-        onChange={handleChange}
-      />
+      <div className="flex flex-col w-full">
+        <label htmlFor="f_address">
+          {t("address")} <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          className="form-textbox"
+          disabled={data.sameAsFather}
+          id="f_address"
+          name="f_address"
+          value={data.f_address}
+          onChange={handleChange}
+        />
+      </div>
 
       {/* <label htmlFor="f_religion">Religion</label>
       <select
