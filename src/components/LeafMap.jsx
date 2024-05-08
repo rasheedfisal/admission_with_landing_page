@@ -5,21 +5,14 @@ import {
   DialogFooter,
 } from "./ui/dialog";
 
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  useMapEvents,
-  useMap,
-  Popup,
-} from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMap, Popup } from "react-leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import { MarkerIcon, SchoolMarkerIcon } from "../icons/MarkerIcon";
 import "leaflet/dist/leaflet.css";
 import "leaflet-geosearch/dist/geosearch.css";
 
 import { useState, useEffect } from "react";
-import { Globe2Icon } from "lucide-react";
+import { FaMapLocationDot } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 const DefaultZoom = 8;
@@ -136,7 +129,7 @@ const LeafMap = ({ defaultLocation, setLocation }) => {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <span className="transform hover:scale-110 text-blue-500 cursor-pointer self-center">
-          <Globe2Icon className="h-7 w-7" />
+          <FaMapLocationDot className="h-7 w-7" />
         </span>
       </DialogTrigger>
       <DialogContent className="max-w-screen-md overflow-y-scroll max-h-screen">

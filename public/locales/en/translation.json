@@ -60,7 +60,7 @@
   "phone1": "Phone 1",
   "phone2": "Phone 2",
   "address": "Address",
-  "location": "Location",
+  "location": "Your Residence",
   "full_name": "Full Name",
   "relationship": "Relationship",
   "same_as_gaurdian": "Same As Guardian",
@@ -114,5 +114,6 @@
   "muslim": "Muslim",
   "christian": "Christian",
   "other": "Other",
-  "confirm": "Confirm"
+  "confirm": "Confirm",
+  "pic_date": "Pick a date"
 }

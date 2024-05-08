@@ -6,7 +6,7 @@ import React, {
   forwardRef,
 } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { cn } from "../../lib/utils";
 import { Button } from "./button";
 
@@ -228,7 +228,7 @@ const CarouselPrevious = forwardRef(
         onClick={scrollPrev}
         {...props}
       >
-        <ArrowLeftIcon className="h-4 w-4" />
+        <GoArrowLeft className="h-4 w-4" />
         <span className="sr-only">Previous slide</span>
       </Button>
     );
@@ -256,7 +256,7 @@ const CarouselNext = forwardRef(
         onClick={scrollNext}
         {...props}
       >
-        <ArrowRightIcon className="h-4 w-4" />
+        <GoArrowRight className="h-4 w-4" />
         <span className="sr-only">Next slide</span>
       </Button>
     );

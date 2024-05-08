@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 
 const Layout = () => {
   return (
-    <div className="font-Poppins bg-Solitude">
+    <div className="font-Tajawal bg-Solitude">
       <Navbar />
       <ToastContainer />
       <AnimatePresence mode="wait">

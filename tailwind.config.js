@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      Poppins: "Poppins",
+      Tajawal: "Tajawal",
     },
     extend: {
       colors: {

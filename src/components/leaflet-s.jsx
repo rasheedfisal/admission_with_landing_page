@@ -4,13 +4,14 @@ import {
   Marker,
   useMap,
   Popup,
-  Circle,
   FeatureGroup,
 } from "react-leaflet";
+import { FullscreenControl } from "react-leaflet-fullscreen";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import { MarkerIcon, SchoolMarkerIcon } from "../icons/MarkerIcon";
 import "leaflet/dist/leaflet.css";
 import "leaflet-geosearch/dist/geosearch.css";
+import "react-leaflet-fullscreen/styles.css";
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 
@@ -47,6 +48,7 @@ const LeafletControl = ({ defaultLocation, setLocation }) => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
       setSelectedPosition([latitude, longitude]);
+      map.current?.flyTo({ lat: latitude, lng: longitude }, 18);
     });
   }, [map]);
 
@@ -165,6 +167,8 @@ const LeafletControl = ({ defaultLocation, setLocation }) => {
         <SchoolMarkers />
         {/* <Markers /> */}
         {map ? <LocationMarker map={map} /> : null}
+
+        <FullscreenControl />
       </MapContainer>
     ),
     [map, selectedPosition]

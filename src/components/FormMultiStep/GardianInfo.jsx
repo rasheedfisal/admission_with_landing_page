@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import useFormContext from "../../hooks/useFormContext";
 import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
-import LeafMap from "../LeafMap";
 import LeafletControl from "../leaflet-s";
 
 const defaultLocation = [30.033333, 31.233334];
@@ -157,7 +156,7 @@ const GardianInfo = () => {
 
         <input
           type="text"
-          className="form-textbox mb-3"
+          className="form-textbox hidden"
           id="g_location"
           name="g_location"
           disabled

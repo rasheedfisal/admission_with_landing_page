@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -9,6 +10,68 @@ html {
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    font-family: "Tajawal", sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  img {
+    @apply w-full;
+  }
+
+  .section {
+    @apply container mx-auto py-24 px-6;
+  }
+  .container-v {
+    @apply max-w-[85%] m-auto;
+  }
+
+  .icon {
+    @apply w-10 h-10 leading-10 rounded-full text-center bg-[#ffffff4d] text-white transition;
+  }
+  .icon:hover {
+    @apply cursor-pointer bg-Teal text-white;
+  }
+  .row-v {
+    @apply w-1/2;
+  }
+  .animate-slide:hover {
+    animation-play-state: paused;
+  }
+
+  .button {
+    @apply py-4 px-8 bg-white text-Teal font-semibold border-none mt-8 mr-3 ml-0 mb-0 rounded-sm cursor-pointer shadow-md transition;
+  }
+  .button svg {
+    @apply ml-5;
+  }
+  .button:hover {
+    @apply shadow-none;
+  }
+  .btn-primary {
+    @apply bg-Teal text-white;
+  }
+  .heading {
+    @apply text-center py-10 px-0;
+  }
+  .heading h3 {
+    @apply font-semibold tracking-wide text-white uppercase;
+  }
+  .heading h1 {
+    @apply text-4xl my-5 mx-0 capitalize;
+  }
+  p {
+    @apply text-xl;
+  }
+  .banner {
+    @apply bg-[url(../public/images/bg.webp)] bg-contain sm:bg-cover bg-fixed absolute top-0 left-0 -z-10 w-full pt-[30%] text-white text-center;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
@@ -76,69 +139,15 @@ html {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  img {
-    @apply w-full;
-  }
-
-  .section {
-    @apply container mx-auto py-24 px-6;
-  }
-  .container-v {
-    @apply max-w-[85%] m-auto;
-  }
-
-  .icon {
-    @apply w-10 h-10 leading-10 rounded-full text-center bg-[#ffffff4d] text-white transition;
-  }
-  .icon:hover {
-    @apply cursor-pointer bg-Teal text-white;
-  }
-  .row-v {
-    @apply w-1/2;
-  }
-  .animate-slide:hover {
-    animation-play-state: paused;
-  }
-
-  .button {
-    @apply py-4 px-8 bg-white text-Teal font-semibold border-none mt-8 mr-3 ml-0 mb-0 rounded-sm cursor-pointer shadow-md transition;
-  }
-  .button svg {
-    @apply ml-5;
-  }
-  .button:hover {
-    @apply shadow-none;
-  }
-  .btn-primary {
-    @apply bg-Teal text-white;
-  }
-  .heading {
-    @apply text-center py-10 px-0;
-  }
-  .heading h3 {
-    @apply font-semibold tracking-wide text-white uppercase;
-  }
-  .heading h1 {
-    @apply text-4xl my-5 mx-0 capitalize;
-  }
-  p {
-    @apply text-xl;
-  }
-  .banner {
-    @apply bg-[url(../public/images/bg.webp)] bg-contain sm:bg-cover bg-fixed absolute top-0 left-0 -z-10 w-full pt-[30%] text-white text-center;
-  }
-}
-
 @layer components {
   .form-textbox {
     @apply px-4 py-2 border border-[#9ca3af] rounded-md focus:outline-none focus:ring;
   }
+}
+
+.PhoneInputInput {
+  outline: none;
+}
+.rdp-vhidden {
+  display: none;
 }

@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import moment from "moment/moment";
 import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
+import { SampleDatePicker } from "../ui/Sample-date-picker";
 
 const isValidEmail = (email) => {
   return /\S+@\S+\.\S+/.test(email);
@@ -15,7 +16,7 @@ const StdInfo = () => {
   const { t } = useTranslation();
   const { setData, data } = useFormContext();
   const [name, setName] = useState("");
-  const [birthDate, setBirthDate] = useState(new Date("dd/MMM/yyyy"));
+  const [birthDate, setBirthDate] = useState(new Date());
   const [className, setClassName] = useState("");
   const [gender, setGender] = useState("");
   const [religion, setReligion] = useState("");
@@ -36,11 +37,14 @@ const StdInfo = () => {
 
   useEffect(() => {
     const givenYear = moment(new Date(birthDate));
-    const currentYear = moment(new Date("30/Sep/2023"));
+
+    const currentYear = moment(new Date("30/Sep/2024"));
 
     if (!isNaN(givenYear)) {
       const differ = currentYear.diff(givenYear);
       const diffDuration = moment.duration(differ);
+
+      console.log("differ-years", diffDuration.years());
 
       if (diffDuration.years() < 2) setClassName("");
       if (diffDuration.years() === 2 || differ === 0) {
@@ -207,7 +211,7 @@ const StdInfo = () => {
         <label htmlFor="std_dateofbirth">
           {t("date_of_birth")} <span className="text-red-600">*</span>
         </label>
-        <input
+        {/* <input
           type="date"
           className="form-textbox"
           id="std_dateofbirth"
@@ -215,7 +219,8 @@ const StdInfo = () => {
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
           onSelect={(e) => setBirthDate(e.target.value)}
-        />
+        /> */}
+        <SampleDatePicker date={birthDate} setDate={setBirthDate} />
       </div>
 
       <div className="flex flex-col w-full">

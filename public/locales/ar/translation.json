@@ -60,7 +60,7 @@
   "phone1": "الهاتف 1",
   "phone2": "الهاتف 2",
   "address": "عنوان",
-  "location": "الموقع",
+  "location": "مكان السكن",
   "full_name": "الاسم الكامل",
   "relationship": "العلاقة",
   "same_as_gaurdian": "نفس الوصي",
@@ -114,5 +114,6 @@
   "muslim": "مسلم",
   "christian": "مسيحي",
   "other": "اخرى",
-  "confirm": "تأكيد"
+  "confirm": "تأكيد",
+  "pic_date": "اختار التاريخ"
 }

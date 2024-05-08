@@ -1,6 +1,5 @@
 import React from "react";
 import Heading from "./common/Heading";
-import { ArrowBigRightIcon } from "lucide-react";
 
 const Hero = () => {
   return (

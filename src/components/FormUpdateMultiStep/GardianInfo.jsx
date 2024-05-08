@@ -156,7 +156,7 @@ const GardianInfo = () => {
         </label>
         <input
           type="text"
-          className="form-textbox mb-3"
+          className="form-textbox hidden"
           id="g_location"
           name="g_location"
           disabled
