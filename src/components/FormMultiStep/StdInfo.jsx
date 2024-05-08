@@ -37,8 +37,8 @@ const StdInfo = () => {
 
   useEffect(() => {
     const givenYear = moment(new Date(birthDate));
-
-    const currentYear = moment(new Date("30/Sep/2024"));
+    const currentFullYear = new Date().getFullYear();
+    const currentYear = moment(new Date(`30/Sep/${currentFullYear}`));
 
     if (!isNaN(givenYear)) {
       const differ = currentYear.diff(givenYear);
@@ -220,7 +220,12 @@ const StdInfo = () => {
           onChange={(e) => setBirthDate(e.target.value)}
           onSelect={(e) => setBirthDate(e.target.value)}
         /> */}
-        <SampleDatePicker date={birthDate} setDate={setBirthDate} />
+        <SampleDatePicker
+          id="std_dateofbirth"
+          name="std_dateofbirth"
+          date={birthDate}
+          setDate={setBirthDate}
+        />
       </div>
 
       <div className="flex flex-col w-full">

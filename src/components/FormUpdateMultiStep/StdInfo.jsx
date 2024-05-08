@@ -7,6 +7,7 @@ import moment from "moment/moment";
 import CustomDatePicker from "../CustomDatePicker";
 import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
+import { SampleDatePicker } from "../ui/Sample-date-picker";
 
 const isValidEmail = (email) => {
   return /\S+@\S+\.\S+/.test(email);
@@ -206,7 +207,7 @@ const StdInfo = () => {
         <label htmlFor="std_dateofbirth">
           {t("date_of_birth")} <span className="text-red-600">*</span>
         </label>
-        <input
+        {/* <input
           type="date"
           className="form-textbox"
           id="std_dateofbirth"
@@ -214,6 +215,12 @@ const StdInfo = () => {
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
           onSelect={(e) => setBirthDate(e.target.value)}
+        /> */}
+        <SampleDatePicker
+          id="std_dateofbirth"
+          name="std_dateofbirth"
+          date={birthDate}
+          setDate={setBirthDate}
         />
       </div>
 

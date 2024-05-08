@@ -7,7 +7,7 @@ import { format } from "date-fns";
 import { IoCalendarNumberOutline } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
 
-export function SampleDatePicker({ date, setDate }) {
+export function SampleDatePicker({ id, name, date, setDate }) {
   const { t } = useTranslation();
   return (
     <Popover key={date?.getDate()}>
@@ -25,6 +25,8 @@ export function SampleDatePicker({ date, setDate }) {
       </PopoverTrigger>
       <PopoverContent align="start" className="w-full p-0">
         <Calendar
+          id={id}
+          name={name}
           mode="single"
           captionLayout="dropdown-buttons"
           hideWeekdayRow={false}
