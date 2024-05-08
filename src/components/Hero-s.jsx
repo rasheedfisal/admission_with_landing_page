@@ -25,7 +25,10 @@ const Hero = () => {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   const { t } = useTranslation();
   return (
-    <section className="min-h-[600px] flex items-center relative" id="home">
+    <section
+      className="min-h-[600px] sm:min-h-[750px] md:min-h-[600px] flex items-center relative"
+      id="home"
+    >
       <img
         className={`absolute left-[5%] ${
           isRtl ? "top-[40%]" : "top-[25%]"
@@ -52,7 +55,7 @@ const Hero = () => {
         src={hero_1_dot_2}
         alt=""
       />
-      <div className="container absolute left-0 right-0 top-24 md:top-3">
+      <div className="container absolute left-0 right-0 top-24 md:top-5">
         {/* <div className="relative z-10 order-2 md:order-1 mt-7 md:mt-0">
               <h3 className="text-2xl md:text-5xl font-bold space-y-5">
                 <span className="block font-normal">{t("site_slogan4")}</span>
