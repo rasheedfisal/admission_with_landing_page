@@ -1,6 +1,7 @@
 import React from "react";
 import useFormContext from "../../hooks/useUpdateFormContext";
 import { useTranslation } from "react-i18next";
+import { Checkbox } from "../ui/checkbox";
 const TermsAndConditions = () => {
   const { t } = useTranslation();
   const { data, handleChange } = useFormContext();
