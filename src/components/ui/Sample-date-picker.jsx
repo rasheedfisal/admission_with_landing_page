@@ -19,7 +19,7 @@ export function SampleDatePicker({ id, name, date, setDate }) {
             !date && "text-muted-foreground"
           )}
         >
-          <IoCalendarNumberOutline className="h-4 w-4" />
+          <IoCalendarNumberOutline className="h-5 w-5" />
           {date ? format(date, "PPP") : <span>{t("pic_date")}</span>}
         </Button>
       </PopoverTrigger>

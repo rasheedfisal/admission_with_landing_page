@@ -59,7 +59,7 @@ const GardianSearch = () => {
 
         <PhoneInput
           defaultCountry="SD"
-          className="form-textbox mb-3"
+          className="mb-3"
           id="gphone_num"
           name="gphone_num"
           value={data.gphone_num}

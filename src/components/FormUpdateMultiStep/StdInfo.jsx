@@ -301,7 +301,7 @@ const StdInfo = () => {
         <PhoneInput
           disabled={className === "Toddlers"}
           defaultCountry="SD"
-          className="form-textbox disabled:opacity-25"
+          className="disabled:opacity-25"
           id="std_lastAttendedSchoolPhone"
           name="std_lastAttendedSchoolPhone"
           value={lastAttendedSchoolPhone}

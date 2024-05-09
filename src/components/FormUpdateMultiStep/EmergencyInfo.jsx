@@ -37,7 +37,6 @@ const EmergencyInfo = () => {
 
         <PhoneInput
           defaultCountry="SD"
-          className="form-textbox"
           id="e_contact"
           name="e_contact"
           required={true}

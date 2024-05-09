@@ -64,7 +64,6 @@ const MotherInfo = () => {
           <PhoneInput
             defaultCountry="SD"
             disabled={data.sameAsMother}
-            className="form-textbox"
             id="m_phone1"
             name="m_phone1"
             value={data.m_phone1}
@@ -77,7 +76,6 @@ const MotherInfo = () => {
           <PhoneInput
             defaultCountry="SD"
             disabled={data.sameAsMother}
-            className="form-textbox"
             id="m_phone2"
             name="m_phone2"
             value={data.m_phone2}

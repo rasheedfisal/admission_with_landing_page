@@ -302,7 +302,6 @@ const StdInfo = () => {
         </label>
         <PhoneInput
           defaultCountry="SD"
-          className="form-textbox"
           id="std_lastAttendedSchoolPhone"
           name="std_lastAttendedSchoolPhone"
           value={lastAttendedSchoolPhone}

@@ -32,7 +32,7 @@ const PhoneInput = React.forwardRef(
     return (
       <RPNInput.default
         ref={ref}
-        className={cn("flex gap-3 px-2 py-1", className)}
+        className={cn("flex", className)}
         flagComponent={FlagComponent}
         countrySelectComponent={CountrySelect}
         inputComponent={InputComponent}
@@ -55,17 +55,24 @@ const PhoneInput = React.forwardRef(
 );
 PhoneInput.displayName = "PhoneInput";
 
-const InputComponent = React.forwardRef(({ className, ...props }, ref) => (
-  <input
-    className={cn("rounded-e-lg rounded-s-none", className)}
-    {...props}
-    ref={ref}
-  />
-));
+const InputComponent = React.forwardRef(({ className, ...props }, ref) => {
+  const isRtl = useIsRTL();
+  return (
+    <input
+      className={cn(
+        "flex h-10 w-full border border-slate-400 bg-transparent px-2 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+        isRtl ? "rounded-e-none rounded-s-lg" : "rounded-e-lg rounded-s-none",
+        className
+      )}
+      {...props}
+      ref={ref}
+    />
+  );
+});
 InputComponent.displayName = "InputComponent";
 
 const CountrySelect = ({ disabled, value, onChange, options }) => {
-  const t = useTranslation();
+  const { t } = useTranslation();
   const handleSelect = React.useCallback(
     (country) => {
       onChange(country);
@@ -79,8 +86,9 @@ const CountrySelect = ({ disabled, value, onChange, options }) => {
         <Button
           type="button"
           variant={"outline"}
-          size={"sm"}
-          className={cn("flex gap-2 px-1 rounded-e-lg rounded-s-none")}
+          className={cn(
+            "flex gap-1 rounded-e-none rounded-s-lg px-2 py-1 border-slate-400"
+          )}
           disabled={disabled}
         >
           <HiMiniChevronUpDown

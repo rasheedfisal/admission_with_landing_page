@@ -114,7 +114,6 @@ const GardianInfo = () => {
           </label>
           <PhoneInput
             defaultCountry="SD"
-            className="form-textbox"
             id="g_phone1"
             name="g_phone1"
             value={data.g_phone1}
@@ -125,7 +124,6 @@ const GardianInfo = () => {
           <label htmlFor="g_phone2">{t("phone2")}</label>
           <PhoneInput
             defaultCountry="SD"
-            className="form-textbox"
             id="g_phone2"
             name="g_phone2"
             value={data.g_phone2}

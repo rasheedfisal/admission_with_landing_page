@@ -113,7 +113,6 @@ const FatherInfo = () => {
 
           <PhoneInput
             defaultCountry="SD"
-            className="form-textbox"
             disabled={data.sameAsFather}
             id="f_phone1"
             name="f_phone1"
@@ -127,7 +126,6 @@ const FatherInfo = () => {
           <PhoneInput
             defaultCountry="SD"
             disabled={data.sameAsFather}
-            className="form-textbox"
             id="f_phone2"
             name="f_phone2"
             value={data.f_phone2}

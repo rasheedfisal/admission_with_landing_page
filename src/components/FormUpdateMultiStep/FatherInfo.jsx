@@ -91,7 +91,6 @@ const FatherInfo = () => {
 
           <PhoneInput
             defaultCountry="SD"
-            className="form-textbox"
             id="f_phone1"
             name="f_phone1"
             value={data.f_phone1}
@@ -103,7 +102,6 @@ const FatherInfo = () => {
 
           <PhoneInput
             defaultCountry="SD"
-            className="form-textbox"
             id="f_phone2"
             name="f_phone2"
             value={data.f_phone2}
