@@ -26,7 +26,7 @@ const FilePdfUploader = ({
   return (
     <div className="flex flex-col items-center justify-center mt-3">
       <div className="mb-4">
-        <label className="mt-2 leading-normal px-4 py-2">
+        <label className="mt-2 leading-normal px-4 py-2 w-full truncate">
           {sourceFile !== "" && FileElement !== null ? sourceFile : ""}
         </label>
       </div>

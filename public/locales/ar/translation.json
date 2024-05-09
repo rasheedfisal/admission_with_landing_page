@@ -63,7 +63,7 @@
   "location": "مكان السكن",
   "full_name": "الاسم الكامل",
   "relationship": "العلاقة",
-  "same_as_gaurdian": "نفس الوصي",
+  "same_as_gaurdian": "نفس بيانات ولي الامر",
   "req_name": "مطلوب اسم.",
   "req_date_of_birth": "تاريخ الميلاد مطلوب.",
   "req_class": "الفصل مطلوبة.",
