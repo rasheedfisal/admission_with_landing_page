@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "./button";
 import { Calendar } from "./calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "./popover";
@@ -15,11 +15,11 @@ export function SampleDatePicker({ id, name, date, setDate }) {
         <Button
           variant={"outline"}
           className={cn(
-            "w-full justify-start text-left font-normal border-slate-400 h-11",
+            "w-full justify-start text-left items-center gap-2 font-normal border-slate-400 h-11",
             !date && "text-muted-foreground"
           )}
         >
-          <IoCalendarNumberOutline className="mr-2 h-4 w-4" />
+          <IoCalendarNumberOutline className="h-4 w-4" />
           {date ? format(date, "PPP") : <span>{t("pic_date")}</span>}
         </Button>
       </PopoverTrigger>

@@ -5,7 +5,7 @@ import FilePdfUploader from "../FilePdfUploader";
 import { toast } from "react-toastify";
 import moment from "moment/moment";
 import CustomDatePicker from "../CustomDatePicker";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useTranslation } from "react-i18next";
 import { SampleDatePicker } from "../ui/Sample-date-picker";
 

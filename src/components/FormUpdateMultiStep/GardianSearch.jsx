@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SubmitButton from "../SubmitButton";
 import { default as useFormContext } from "../../hooks/useUpdateFormContext";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useQuery } from "@tanstack/react-query";
 import { getAdmissionByPhone } from "../../api/admApi";
 import { AiOutlineSearch } from "react-icons/ai";

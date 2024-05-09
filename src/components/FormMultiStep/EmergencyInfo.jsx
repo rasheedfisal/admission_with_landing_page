@@ -1,6 +1,6 @@
 import React from "react";
 import useFormContext from "../../hooks/useFormContext";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useTranslation } from "react-i18next";
 
 const EmergencyInfo = () => {

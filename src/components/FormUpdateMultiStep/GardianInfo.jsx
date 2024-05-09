@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { default as useFormContext } from "../../hooks/useUpdateFormContext";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useTranslation } from "react-i18next";
 import LeafMap from "../LeafMap";
 import LeafletControl from "../leaflet-s";

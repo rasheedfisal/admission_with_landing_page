@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import useFormContext from "../../hooks/useFormContext";
-import PhoneInput from "react-phone-number-input";
 import { useTranslation } from "react-i18next";
 import LeafletControl from "../leaflet-s";
+import { PhoneInput } from "../ui/phone-input";
 
 const defaultLocation = [30.033333, 31.233334];
 
 const GardianInfo = () => {
   const { t } = useTranslation();
-
   const [location, setLocation] = useState(defaultLocation);
 
   const { data, handleChange, handleCustomElementChange } = useFormContext();

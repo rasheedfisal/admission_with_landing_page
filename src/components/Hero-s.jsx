@@ -56,39 +56,6 @@ const Hero = () => {
         alt=""
       />
       <div className="container absolute left-0 right-0 top-24 md:top-5">
-        {/* <div className="relative z-10 order-2 md:order-1 mt-7 md:mt-0">
-              <h3 className="text-2xl md:text-5xl font-bold space-y-5">
-                <span className="block font-normal">{t("site_slogan4")}</span>
-                <span className="relative z-10">
-                  {t("site_slogan5")}{" "}
-                  <img
-                    className="absolute bottom-[22px] left-[-8px] -z-10 animate-section-animation"
-                    src={yellow_bg}
-                    alt="yellow-shape"
-                    width={194}
-                    height={15}
-                    style={{ width: "194px", height: "15px" }}
-                  />
-                </span>
-                {t("site_slogan6")}
-              </h3>
-              <p className="pr-0 md:pr-5">{t("site_slogan7")}</p>
-              <div className="flex gap-3 mt-10">
-                <NextLink
-                  href="/admission"
-                  className="bg-blue-700 h-8 md:h-10 rounded-md px-3 md:px-8 text-xs md:text-base animate-bounce duration-1000"
-                >
-                  {t("adm_btn")}
-                </NextLink>
-                <NextLink
-                  href="/old"
-                  className="h-8 md:h-10 rounded-md px-3 md:px-8 text-xs md:text-base animate-reverse-bounce duration-1000"
-                >
-                  {t("adm_reenrollment")}
-                </NextLink>
-              </div>
-            </div> */}
-
         <div className="hero__thumb z-10 flex relative order-1 md:order-2">
           <div className="hero__thumb-shape">
             <img
@@ -139,18 +106,7 @@ const Hero = () => {
                         src={hero_1}
                         className="rounded-md shadow sm:mt-[50px] w-full max-h-[460px] max-w-full object-cover"
                         alt=""
-                        // width={400}
-                        // height={460}
-                        // style={{ width: "400px", height: "460px" }}
                       />
-                      {/* <div className="p-1 relative w-full h-80 md:h-[430px] max-h-[430px]">
-                            <Image
-                              src={`/${item}`}
-                              className="max-w-full h-auto rounded-md object-fill"
-                              alt="discount banner"
-                              fill
-                            />
-                          </div> */}
                     </CarouselItem>
                   );
                 })}
@@ -158,22 +114,25 @@ const Hero = () => {
               <CarouselDots className="flex justify-center relative -top-5" />
             </Carousel>
             <div
-              className={`hero__quote bg-white shadow px-2 py-2 flex flex-col gap-1 rounded absolute bottom-[-80px] right-[25%] md:right-[40%] animate-wiggle  hero__quote-animation`}
+              className={`hero__quote bg-white shadow px-2 py-2 flex flex-col items-center gap-2 rounded absolute bottom-[-65px] left-0 right-0 w-fit mx-auto  animate-wiggle  hero__quote-animation`}
             >
-              {/* <span>{t("site_slogan8")}</span>
-              <h4>{t("site_slogan8")}</h4> */}
-              <NextLink
-                href="/admission"
-                className="bg-blue-700 w-full h-full rounded"
-              >
-                {t("adm_btn")}
-              </NextLink>
-              <NextLink href="/old" className="w-full h-full rounded">
-                {t("adm_reenrollment")}
-              </NextLink>
+              <span className="font-medium text-xs px-2 py-1 rounded-full bg-green-500 text-green-100">
+                {t("registraion_open")}
+              </span>
+              <div className="flex items-center gap-2">
+                <NextLink
+                  href="/admission"
+                  className="bg-blue-700 w-full h-full rounded"
+                >
+                  {t("adm_btn")}
+                </NextLink>
+                <NextLink href="/old" className="w-full h-full rounded">
+                  {t("adm_reenrollment")}
+                </NextLink>
+              </div>
             </div>
           </div>
-          <div className="hero__thumb-sm mt-[50px] hidden md:block">
+          {/* <div className="hero__thumb-sm mt-[50px] hidden md:block">
             <img
               src={hero_sm_1}
               className="rounded-md shadow w-full md:ml-auto md:mr-[20px] lg:ml-0 lg:mr-[-50px] object-cover max-w-[200px] max-h-[240px]"
@@ -182,7 +141,7 @@ const Hero = () => {
               //   height={240}
               style={{ width: "200px", height: "240px" }}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

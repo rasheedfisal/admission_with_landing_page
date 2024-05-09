@@ -45,7 +45,7 @@
   "terms_text2": "Thank you for your interest in enrolling your son / daughter at Nile Valley School. By completing this form you're indicating that you're interested in making an application for your child's enrollment at NVS or that you would like your child's name to be placed on NVS waiting list.",
   "terms_text3": "Later in time, you will also be asked to submit other necessary application requirements to support your child application (previous reports, reference letter and/or other documentations).",
   "terms_text4": "Completion of this application does not guarantee acceptance.",
-  "i_agree": "I Agree",
+  "i_agree": "Accept terms and conditions",
   "re_terms_text1": "Dear Valued Students and Parents, Thank you for your interest in Nile Valley School. We at NVS, with ultimate sincerity, invest in embedding in our students the allurement for Knowledge, the pearl of life, coupled with sensitivity to ethics and devotion to excellence.",
   "re_terms_text2": "This is to confirm that I wish to register my child/ren as student(s) at Nile Valley School for the Academic Year 2023/2024.",
   "re_terms_text3": "Kindly note that the school will only re-enroll your child/ren if there are no outstanding fee balances.",
@@ -115,5 +115,8 @@
   "christian": "Christian",
   "other": "Other",
   "confirm": "Confirm",
-  "pic_date": "Pick a date"
+  "pic_date": "Pick a date",
+  "registraion_open": "Registration is open",
+  "search_country": "Search country...",
+  "no_country_found": "No country found."
 }

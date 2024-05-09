@@ -1,36 +1,25 @@
 import React from "react";
 import useFormContext from "../../hooks/useFormContext";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useTranslation } from "react-i18next";
+import { Checkbox } from "../ui/checkbox";
 const MotherInfo = () => {
   const { t } = useTranslation();
   const { data, handleChange, handleCustomElementChange } = useFormContext();
 
   const content = (
     <div className="flex flex-col gap-5">
-      {/* <label htmlFor="m_title">Title</label>
-      <select
-        id="m_title"
-        className="form-textbox"
-        name="m_title"
-        value={data.m_title}
-        onChange={handleChange}
-      >
-        <option value="Mr">Mr.</option>
-        <option value="Mrs">Mrs.</option>
-        <option value="Ms">Ms.</option>
-      </select> */}
-
-      <div className="form-check">
-        <input
-          className="form-check-input h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-          type="checkbox"
+      <div className="flex items-center gap-2">
+        <Checkbox
           name="sameAsMother"
           id="sameAsMother"
           onChange={handleChange}
           checked={data.sameAsMother}
         />
-        <label className="form-check-label inline-block text-gray-800 dark:text-gray-100">
+        <label
+          htmlFor="sameAsMother"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
           {t("same_as_gaurdian")}
         </label>
       </div>

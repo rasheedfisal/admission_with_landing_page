@@ -1,6 +1,6 @@
 import React from "react";
 import { default as useFormContext } from "../../hooks/useUpdateFormContext";
-import PhoneInput from "react-phone-number-input";
+import { PhoneInput } from "../ui/phone-input";
 import { useTranslation } from "react-i18next";
 const FatherInfo = () => {
   const { t } = useTranslation();
@@ -38,6 +38,7 @@ const FatherInfo = () => {
           />
         </div>
       </div>
+
       <div className="flex items-center justify-between gap-5 flex-wrap">
         <div className="flex flex-col w-full">
           <label htmlFor="f_middleName">
