@@ -61,7 +61,7 @@ const InputComponent = React.forwardRef(({ className, ...props }, ref) => {
     <input
       className={cn(
         "flex h-10 w-full border border-slate-400 bg-transparent px-2 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-        isRtl ? "rounded-e-none rounded-s-lg" : "rounded-e-lg rounded-s-none",
+        isRtl ? "rounded-e-none rounded-s-md" : "rounded-e-md rounded-s-none",
         className
       )}
       {...props}
@@ -87,7 +87,7 @@ const CountrySelect = ({ disabled, value, onChange, options }) => {
           type="button"
           variant={"outline"}
           className={cn(
-            "flex gap-1 rounded-e-none rounded-s-lg px-2 py-1 border-slate-400"
+            "flex gap-1 rounded-e-none rounded-s-md px-2 py-1 border-slate-400"
           )}
           disabled={disabled}
         >

@@ -15,6 +15,7 @@ const MotherInfo = () => {
           id="sameAsMother"
           onChange={handleChange}
           checked={data.sameAsMother}
+          disabled={data.sameAsFather}
         />
         <label
           htmlFor="sameAsMother"

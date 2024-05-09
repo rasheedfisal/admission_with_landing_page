@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from "react";
-import noImg from "../assets/select-img.png";
 
 const FilePdfUploader = ({
   setFileElement,
@@ -24,9 +23,9 @@ const FilePdfUploader = ({
     []
   );
   return (
-    <div className="flex flex-col items-center justify-center mt-3">
-      <div className="mb-4">
-        <label className="mt-2 leading-normal px-4 py-2 w-full truncate">
+    <div className="flex flex-col items-center justify-center mt-3 w-full">
+      <div className="mb-4 w-full truncate">
+        <label className="mt-2 leading-normal px-4 py-2">
           {sourceFile !== "" && FileElement !== null ? sourceFile : ""}
         </label>
       </div>

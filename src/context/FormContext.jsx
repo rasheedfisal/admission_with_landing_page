@@ -105,12 +105,9 @@ export const FormProvider = ({ children }) => {
   }, [data.sameAsMother, data.sameAsFather]);
 
   const handleChange = (e) => {
-    console.log("checkbox", e);
     const type = e.target.type;
 
     const name = e.target.name;
-
-    // const value = type === "checkbox" ? e.target.checked : e.target.value;
     const value = type === "checkbox" ? e.target.checked : e.target.value;
 
     setData((prevData) => ({

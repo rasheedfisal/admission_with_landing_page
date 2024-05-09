@@ -44,8 +44,6 @@ const StdInfo = () => {
       const differ = currentYear.diff(givenYear);
       const diffDuration = moment.duration(differ);
 
-      console.log("differ-years", diffDuration.years());
-
       if (diffDuration.years() < 2) setClassName("");
       if (diffDuration.years() === 2 || differ === 0) {
         setClassName("Toddlers");
